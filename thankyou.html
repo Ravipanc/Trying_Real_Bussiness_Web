@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Box Power</title>
+    <!-- Link to Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Add your custom CSS styles here (if any) -->
+    <style>
+        /* Add your custom CSS styles here (if any) */
+    </style>
+ <!-- ... (head content) ... -->
+</head>
+<body class="bg-gray-100">
+    <div class="flex items-center justify-center h-screen">
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <h1 class="text-2xl font-semibold mb-4">Thank You for Your Purchase!</h1>
+            <p class="mb-4">We appreciate your business.</p>
+            <a href="Landing_Page.html" class="text-blue-500 hover:underline">Back to Home</a>
+        </div>
+    </div>
+    <div id="thankYouMessage" class="hidden text-center fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-4">Thank You for Your Purchase!</h2>
+            <p class="mb-4">We appreciate your business.</p>
+            <a href="Landing_Page.html" class="text-blue-500 hover:underline">Back to Home</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const contactForm = document.getElementById("contactForm");
+    const thankYouMessage = document.getElementById("thankYouMessage");
+
+    contactForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+
+        if (name.trim() === "" || email.trim() === "") {
+            alert("Please fill in all fields.");
+        } else {
+            // Show the thank you message and hide the form
+            contactForm.style.display = "none";
+            thankYouMessage.style.display = "block";
+
+            // Redirect to the home page after 5 seconds
+            setTimeout(() => {
+                window.location.href = "Landing_Page.html";
+            }, 5000); // Delay in milliseconds (5 seconds)
+        }
+    });
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support | Black Box Power</title>
+  <!-- Link to Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Add your custom CSS styles here (if any) -->
+  <style>
+    /* Add your custom CSS styles here (if any) */
+  </style>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Header Section -->
+  <header class="bg-gray-800 py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <h1 class="text-white text-2xl font-semibold">Black Box Power</h1>
+      <nav class="hidden md:block">
+        <ul class="flex space-x-4">
+          <li><a href="Landing_Page.html" class="text-white hover:text-blue-400">Home</a></li>
+          <li><a href="about.html" class="text-white hover:text-blue-400">About</a></li>
+          <li><a href="Landing_Page.html#product" class="text-white hover:text-blue-400">Product</a></li>
+          <li><a href="support.html" class="text-white hover:text-blue-400">Support</a></li>
+          <li><a href="contact.html" class="text-white hover:text-blue-400">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- Hamburger menu for smaller screens -->
+      <div class="md:hidden">
+        <button id="menuBtn" class="block text-black p-2">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu hidden by default, shown on smaller screens -->
+  <nav id="mobileMenu" class="hidden md:hidden mt-2">
+    <a href="Landing_Page.html" class="block py-2 px-4 hover:bg-gray-700 rounded">Home</a>
+    <a href="about.html" class="block py-2 px-4 hover:bg-gray-700 rounded">About</a>
+    <a href="Landing_Page.html#product" class="block py-2 px-4 hover:bg-gray-700 rounded">Product</a>
+    <a href="#support" class="block py-2 px-4 hover:bg-gray-700 rounded">Support</a>
+    <a href="contact.html" class="block py-2 px-4 hover:bg-gray-700 rounded">Contact</a>
+  </nav>
+
+  <!-- Support Section -->
+  <section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center">
+        <h1 class="text-4xl font-bold mb-4">Support</h1>
+        <p class="text-gray-600">
+      If you have any questions or need support related to our EV chargers, feel free to reach out to our customer
+      support team. Our team is available 24/7 to assist you with any inquiries or issues you may have. You can contact
+      us via phone, email, or through our support portal.
+    </p>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Login Form -->
+  <div class="flex justify-center mt-8">
+    <div class="w-1/3 bg-white p-8 rounded-lg shadow-lg">
+      <div class="flex mb-4">
+        <button id="loginBtn"
+          class="flex-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+          Login
+        </button>
+        <button id="signupBtn"
+          class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+          Signup
+        </button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm">
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Username</label>
+          <input
+            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="loginUsername" type="text" placeholder="Username">
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Password</label>
+          <input
+            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="loginPassword" type="password" placeholder="Password">
+        </div>
+
+        <div class="flex items-center justify-between">
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit">
+            Login
+          </button>
+        </div>
+      </form>
+
+     
+
+      <!-- Signup Form -->
+<form id="signupForm" class="hidden">
+    <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Username</label>
+        <input
+            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="signupUsername" type="text" placeholder="Username">
+    </div>
+    <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Password</label>
+        <input
+            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="signupPassword" type="password" placeholder="Password">
+    </div>
+    <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="confirmPassword">Confirm Password</label>
+        <input
+            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="confirmPassword" type="password" placeholder="Confirm Password" oninput="checkPasswordMatch()">
+        <p class="text-red-500 text-xs mt-1 hidden" id="passwordError">Passwords do not match.</p>
+    </div>
+    <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+        <input
+            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="email" type="email" placeholder="Email">
+        <p class="text-red-500 text-xs mt-1 hidden" id="emailError">Please enter a valid email address.</p>
+    </div>
+
+    <div class="flex items-center justify-between">
+        <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit">
+            Signup
+        </button>
+    </div>
+</form>
+
+<script>
+    function checkPasswordMatch() {
+        const passwordInput = document.getElementById('signupPassword');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        const passwordError = document.getElementById('passwordError');
+
+        if (passwordInput.value !== confirmPasswordInput.value) {
+            passwordError.classList.remove('hidden');
+        } else {
+            passwordError.classList.add('hidden');
+        }
+    }
+</script>
+
+
+    </div>
+  </div>
+
+<script>
+  signupForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const username = document.getElementById('signupUsername').value;
+        const password = document.getElementById('signupPassword').value;
+        const confirmPassword = confirmPasswordInput.value;
+        const email = emailInput.value;
+
+        // Password validation
+        if (password !== confirmPassword) {
+            passwordError.classList.remove('hidden');
+            confirmPasswordInput.classList.add('border-red-500');
+            return;
+        } else {
+            passwordError.classList.add('hidden');
+            confirmPasswordInput.classList.remove('border-red-500');
+        }
+
+        // Email validation
+        if (!validateEmail(email)) {
+            emailError.classList.remove('hidden');
+            emailInput.classList.add('border-red-500');
+            return;
+        } else {
+            emailError.classList.add('hidden');
+            emailInput.classList.remove('border-red-500');
+        }
+
+        // In a real application, you would send the username and password to the backend for signup.
+        // Here, we are just checking if the username and password are not empty as a simple example.
+        if (username.trim() !== '' && password.trim() !== '') {
+            alert('Signup successful!');
+            // Clear the signup form fields
+            document.getElementById('signupUsername').value = '';
+            document.getElementById('signupPassword').value = '';
+            confirmPasswordInput.value = '';
+            emailInput.value = '';
+
+            // Switch to the login form
+            loginForm.classList.remove('hidden');
+            signupForm.classList.add('hidden');
+            resetErrors();
+        } else {
+            alert('Please enter a valid username and password.');
+        }
+    });
+</script>
+
+  <!-- ... (other sections or content you want to add) ... -->
+<!-- Footer Section -->
+  <footer class="bg-gray-800 text-white p-4 mt-8">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Footer Column 1 -->
+        <div>
+          <h3 class="text-xl font-semibold mb-4">About Us</h3>
+          <p class="text-gray-400">Black Box Power is a leading provider of innovative charging solutions for electric vehicles.</p>
+        </div>
+        <!-- Footer Column 2 -->
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Contact</h3>
+          <p class="text-gray-400">Address: 28/10, D-II, Block, MIDC Chinchwad, Pune, India</p>
+          <p class="text-gray-400">Phone: +91 8080634861</p>
+          <p class="text-gray-400">Email: <a href="mailto:blackboxpower@gmail.com" class="text-white hover:text-blue-400">blackboxpower@gmail.com</a></p>
+        </div>
+        <!-- Footer Column 3 -->
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+          <div class="flex space-x-4">
+            <a href="https://www.linkedin.com/in/raviraj-panchal-20234b210?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BWwTiHxK0TJ60fMB%2FW0Mzaw%3D%3D" target="_blank" rel="noopener" class="text-white hover:text-blue-400 mx-2">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.13 3H3.87A1.88 1.88 0 002 4.87v14.25A1.88 1.88 0 003.87 21h16.26A1.88 1.88 0 0022 19.13V4.87A1.88 1.88 0 0020.13 3zM8.25 17.5h-2.5v-8h2.5v8zm-1.25-9.2c-.666 0-1.2-.536-1.2-1.2s.534-1.2 1.2-1.2 1.2.536 1.2 1.2-.534 1.2-1.2 1.2zM17.5 17.5h-2.5v-4.935c0-.843-.75-1.565-1.592-1.565-.846 0-1.908.722-1.908 1.565v4.935h-2.5v-8h2.5v.957c.453-.7 1.465-1.448 2.408-1.448 2.05 0 3.592 1.424 3.592 4.49v4.001z"></path>
+              </svg>
+            </a>
+
+              <a href="https://twitter.com" target="_blank" rel="noopener" class="text-white hover:text-blue-400 mx-2">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.002 4.954a7.906 7.906 0 01-2.24.615 3.967 3.967 0 001.748-2.19 7.868 7.868 0 01-2.507.958A3.939 3.939 0 0013.582 3c-2.16 0-3.915 1.767-3.915 3.944a3.889 3.889 0 00.1.903 11.199 11.199 0 01-8.145-4.123A3.95 3.95 0 003.634 8.3a3.928 3.928 0 01-1.775-.489v.052a3.938 3.938 0 003.153 3.85 3.97 3.97 0 01-1.768.067 3.942 3.942 0 003.672 2.739 7.91 7.91 0 01-4.898 1.692 8.082 8.082 0 01-.944-.054 11.073 11.073 0 006.006 1.743c7.173 0 11.091-5.945 11.091-11.091l-.013-.505A7.75 7.75 0 0021.002 4.954z"></path>
+              </svg>
+            </a>
+
+           
+          <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
+    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2a9.998 9.998 0 00-7.115 2.945A10.02 10.02 0 002 12c0 4.418 2.853 8.143 6.788 9.452.496.097.679-.214.679-.476l-.007-2.204c-2.758.541-3.34-1.325-3.34-1.325-.451-1.148-1.1-1.457-1.1-1.457-.9-.615.068-.603.068-.603.992.07 1.515 1.017 1.515 1.017.882 1.512 2.32 1.074 2.888.82.091-.64.346-1.075.625-1.32-2.18-.244-4.474-1.09-4.474-4.847 0-1.07.374-1.943.99-2.63-.1-.244-.438-1.242.097-2.587 0 0 .823-.263 2.7 1.002.786-.22 1.627-.329 2.465-.333.838.004 1.68.113 2.465.333 1.874-1.265 2.698-1.002 2.698-1.002.535 1.345.197 2.343.097 2.587.618.687.988 1.56.988 2.63 0 3.766-2.3 4.6-4.487 4.837.354.303.671.902.671 1.813l-.007 2.686c0 .263.179.575.686.476A10.02 10.02 0 0022 12c0-5.523-4.477-10-10-10z"></path>
+              </svg>
+  </a>
+
+          </div>
+        </div>
+      </div>
+      <hr class="border-gray-600 my-4">
+      <p class="text-center text-gray-400">© 2023 Black Box Power. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript to toggle mobile menu -->
+  <script>
+   const loginBtn = document.getElementById('loginBtn');
+    const signupBtn = document.getElementById('signupBtn');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+    const emailInput = document.getElementById('email');
+    const passwordError = document.getElementById('passwordError');
+    const emailError = document.getElementById('emailError');
+
+    loginBtn.addEventListener('click', function () {
+      loginForm.classList.remove('hidden');
+      signupForm.classList.add('hidden');
+      resetErrors();
+    });
+
+    signupBtn.addEventListener('click', function () {
+      loginForm.classList.add('hidden');
+      signupForm.classList.remove('hidden');
+      resetErrors();
+    });
+
+    loginForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const username = document.getElementById('loginUsername').value;
+      const password = document.getElementById('loginPassword').value;
+
+      // In a real application, you would check if the user exists in the database.
+      // For this example, we're just redirecting to the signup page if the user does not exist.
+      if (username.trim() !== '' && password.trim() !== '') {
+        alert('Login successful!');
+        // You can redirect the user to the dashboard or another page here.
+      } else {
+        alert('User does not exist. Please signup.');
+        signupForm.classList.remove('hidden');
+      }
+    });
+
+    signupForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const username = document.getElementById('signupUsername').value;
+      const password = document.getElementById('signupPassword').value;
+      const confirmPassword = confirmPasswordInput.value;
+      const email = emailInput.value;
+
+      // Password validation
+      if (password !== confirmPassword) {
+        passwordError.classList.remove('hidden');
+        confirmPasswordInput.classList.add('border-red-500');
+        return;
+      } else {
+        passwordError.classList.add('hidden');
+        confirmPasswordInput.classList.remove('border-red-500');
+      }
+
+      // Email validation
+      if (!validateEmail(email)) {
+        emailError.classList.remove('hidden');
+        emailInput.classList.add('border-red-500');
+        return;
+      } else {
+        emailError.classList.add('hidden');
+        emailInput.classList.remove('border-red-500');
+      }
+
+      // In a real application, you would send the username and password to the backend for signup.
+      // Here, we are just checking if the username and password are not empty as a simple example.
+      if (username.trim() !== '' && password.trim() !== '') {
+        alert('Signup successful!');
+        // You can handle the signup process here.
+      } else {
+        alert('Please enter a valid username and password.');
+      }
+    });
+
+    function validateEmail(email) {
+      // Basic email validation using regular expression
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailPattern.test(email);
+    }
+
+    function resetErrors() {
+      passwordError.classList.add('hidden');
+      confirmPasswordInput.classList.remove('border-red-500');
+      emailError.classList.add('hidden');
+      emailInput.classList.remove('border-red-500');
+    }
+    
+  </script>
+
+</body>
+
+</html>

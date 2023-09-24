@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Cart</title>
+    <!-- Link to your custom CSS file if needed -->
+    <a href="cartlist.html">View Cart</a>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-gray-800 py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-white text-2xl font-semibold">View Cart</h1>
+        </div>
+    </header>
+
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold mb-4">Your Cart</h2>
+            <ul id="cartList" class="mb-4"></ul>
+            <a href="#" id="clearCartBtn" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300">Clear Cart</a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white p-4 mt-8">
+        <div class="container mx-auto">
+            <hr class="border-gray-600 my-4">
+            <p class="text-center text-gray-400">© 2023 Black Box Power. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+        // Attach event listener to the "Clear Cart" button
+        document.getElementById('clearCartBtn').addEventListener('click', clearCart);
+
+        // Load and display cart items from local storage
+        function loadCartItems() {
+            const cartList = document.getElementById('cartList');
+            const cartData = JSON.parse(localStorage.getItem('cart'));
+            
+            if (cartData) {
+                cartData.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${item.name} - ${formatIndianCurrency(item.price)}`;
+                    cartList.appendChild(listItem);
+                });
+            }
+        }
+
+        // Load cart items when the page loads
+        window.addEventListener('load', () => {
+            loadCartItems();
+        });
+    </script>
+</body>
+</html>
